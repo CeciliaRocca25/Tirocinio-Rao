@@ -36,5 +36,6 @@ rao_ndvi <- Rao(crop_ndvi, window=5)
 plot(rao_ndvi[[1]][[1]])
 
 im<-stack(im_green, im_blue, im_red, im_NIR)
-rao_multi <- Rao(as.list(im), window = 5, mode="multispectral")
 
+crop_im<-crop(im, ext)
+rao_multi <- Rao(as.list(crop_im), window = 5, mode="multispectral")
